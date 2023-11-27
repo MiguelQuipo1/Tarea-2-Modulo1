@@ -1,5 +1,6 @@
 package com.distribuida.principal;
 
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.distribuida.entities.Autor;
@@ -14,15 +15,15 @@ public class Principal {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(Config.class);
 		
-		Cliente cliente = context.getBean("idCliente",Cliente.class);
-		Factura factura = context.getBean("idFactura",Factura.class);
-		DetalleFactura detalleFactura = context.getBean("idFacturaDetalle",DetalleFactura.class);
-		Libro libro = context.getBean("idLibro",Libro.class);
-		Categoria categoria = context.getBean("idCategoria",Categoria.class);
-		Autor autor = context.getBean("idAutor",Autor.class);
-		DatosEmpresa datosEmpresa= context.getBean("idDatosEmpresa", DatosEmpresa.class);
+		Cliente cliente = context.getBean("cliente",Cliente.class);
+		Factura factura = context.getBean("factura",Factura.class);
+		DetalleFactura detalleFactura = context.getBean("detalleFactura",DetalleFactura.class);
+		Libro libro = context.getBean("libro",Libro.class);
+		Categoria categoria = context.getBean("categoria",Categoria.class);
+		Autor autor = context.getBean("autor",Autor.class);
+		DatosEmpresa datosEmpresa= context.getBean("datosEmpresa", DatosEmpresa.class);
 		
 		//CLIENTE
 		cliente.setIdCliente(1);
@@ -78,7 +79,11 @@ public class Principal {
 		
 		//IMPRIMIR
 		System.out.println(datosEmpresa.toString());
+		System.out.println(autor.toString());
+		System.out.println(categoria.toString());
 		System.out.println(libro.toString());
+		System.out.println(factura.toString());
+		System.out.println(cliente.toString());
 		System.out.println(detalleFactura.toString());
 		
 		context.close();

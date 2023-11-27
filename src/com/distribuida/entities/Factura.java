@@ -1,5 +1,9 @@
 package com.distribuida.entities;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
 public class Factura {
 	
 	private int idFactura;
@@ -9,6 +13,7 @@ public class Factura {
 	private double iva;
 	private double total;
 	
+	@Autowired
 	private Cliente cliente;
 	
 	public Factura () {}

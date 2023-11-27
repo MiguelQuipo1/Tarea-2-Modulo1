@@ -1,5 +1,9 @@
 package com.distribuida.entities;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
 public class Libro {
 	
 	private int idLibro;
@@ -17,7 +21,9 @@ public class Libro {
 	private String presentacion;
 	private double precio;
 	
+	@Autowired
 	private Autor autor;
+	@Autowired
 	private Categoria categoria;
 	
 	public Libro() {}

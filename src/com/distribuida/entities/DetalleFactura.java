@@ -1,12 +1,18 @@
 package com.distribuida.entities;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
 public class DetalleFactura {
 	
 	private int idDetalleFactura;
 	private int cantidad;
 	private double subTotal;
 	
+	@Autowired
 	private Factura factura;
+	@Autowired
 	private Libro libro;
 
 	public DetalleFactura() {}
